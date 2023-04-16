@@ -10,14 +10,13 @@ def read_input():
         return pattern, txt
         
     elif "F" in choice:
-        filename = "06"
-        if "a" in filename:
-            print("File names with letter a are not allowed")
-            return
-     
-            with open('tests/' + filename, 'r') as file:
+        filename = '06'
+        if "a" not in file:
+            file_name = "tests/" + filename
+            with open(file_name, 'r') as file:
                 pattern = file.readline().strip()
-                txt = file.readline().strip()
+                text = file.readline().strip()
+            return pattern, txt
                 
     else:
       print("Error")
