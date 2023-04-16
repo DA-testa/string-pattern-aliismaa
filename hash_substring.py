@@ -15,8 +15,11 @@ def read_input():
             file_name = "tests/" + filename
             with open(file_name, 'r') as f:
                 pattern = f.readline().strip()
-                text = f.readline().strip()
+                txt = f.readline().strip()
             return pattern, txt
+    else:
+      print("error")
+      return
 
 def print_occurrences(output):
     print(' '.join(map(str, output)))
