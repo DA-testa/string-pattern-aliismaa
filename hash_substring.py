@@ -29,12 +29,12 @@ def print_occurrences(output):
 
 def get_occurrences(pattern, txt):
    
-    find_len = len(pattern)
+    pattern_len = len(pattern)
     txt_len = len(txt)
-    find_hesh = hash(pattern)
-    txt_hesh = hash(txt[:find_len])
+    pattern_hash = hash(pattern)
+    txt_hash = hash(txt[:find_len])
     
-     occurrences = []
+    occurrences = []
     for i in range(len(txt) - len(pattern) + 1):
         if pattern_hash == txt_hash:
             if pattern == txt[i:i+len(pattern)]:
