@@ -15,7 +15,7 @@ def read_input():
             print("File names with letter a are not allowed")
             return
         try:
-            with open('tests/' + filename, 'r') as file:
+            with open('tests/' + filename, 'r') as f:
                 pattern = f.readline().strip()
                 txt = f.readline().strip()
                 
