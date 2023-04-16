@@ -27,12 +27,13 @@ def read_input():
 def print_occurrences(output):
     print(' '.join(map(str, output)))
 
-def get_occurrences(pattern, text):
+def get_occurrences(pattern, txt):
     occurrences = []
     find_len = len(pattern)
     txt_len = len(txt)
     find_hesh = hash(pattern)
     txt_hesh = hash(txt[:find_len])
+    
     for i in range(len(txt) - len(pattern) + 1):
         if pattern_hash == txt_hash:
             if pattern == txt[i:i+len(pattern)]:
