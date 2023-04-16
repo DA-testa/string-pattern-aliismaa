@@ -34,13 +34,12 @@ def get_occurrences(pattern, txt):
     txt_hash = hash(txt[:pattern_len])
     
     occurrences = []
-    for i in range(len(txt) - len(pattern) + 1):
-        if pattern_hash == txt_hash:
-            if pattern == txt[i:i+len(pattern)]:
-                occurrences.append(i)
-        if i < len(txt) - len(pattern):
-            txt_hash = txt_hash - ord(txt[i]) + ord(txt[i+len(pattern)])
-            txt_hash %= 101
+    for i in range(txt_len - pattern_len +1):
+        if find_hesh == txt_hash and pattern == txt[i:i+pattern_len]:
+            occurrences.append(i)
+        # change main text-hesh to next
+        if i < txt_len - pattern_len:
+            txt_hash = hash(txt[i+1:i+pattern_len+1])
     return occurrences
 
 if __name__ == '__main__':
