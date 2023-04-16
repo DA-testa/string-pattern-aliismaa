@@ -11,7 +11,7 @@ def read_input():
         
     elif "F" in choice:
         filename = '06'
-        if "a" not in file:
+        if "a" not in filename:
             file_name = "tests/" + filename
             with open(file_name, 'r') as file:
                 pattern = file.readline().strip()
