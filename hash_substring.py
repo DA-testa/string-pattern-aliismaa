@@ -14,14 +14,14 @@ def read_input():
         if "a" in filename:
             print("File names with letter a are not allowed")
             return
-        try:
-            with open('tests/' + filename, 'r') as f:
-                pattern = f.readline().strip()
-                txt = f.readline().strip()
+     
+            with open('tests/' + filename, 'r') as file:
+                pattern = file.readline().strip()
+                txt = file.readline().strip()
                 
-        except FileNotFoundError:
-            print("Error")
-            return
+    else:
+      print("Error")
+      return
 
 
 def print_occurrences(output):
@@ -34,6 +34,7 @@ def get_occurrences(pattern, txt):
     find_hesh = hash(pattern)
     txt_hesh = hash(txt[:find_len])
     
+     occurrences = []
     for i in range(len(txt) - len(pattern) + 1):
         if pattern_hash == txt_hash:
             if pattern == txt[i:i+len(pattern)]:
