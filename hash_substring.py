@@ -10,7 +10,7 @@ def read_input():
         return pattern, txt
         
     elif "F" in choice:
-        filename = '06'
+        filename = "06"
         if "a" not in filename:
             file_name = "tests/" + filename
             with open(file_name, 'r') as f:
@@ -33,10 +33,10 @@ def get_occurrences(pattern, txt):
     
     occurrences = []
     for i in range(txt_len - pattern_len + 1):
-        if pattern_hash == txt_hash and pattern == txt[i:i+pattern_len]:
+        if pattern_hash == txt_hash and pattern == txt[i:i + pattern_len]:
             occurrences.append(i)
         if i < txt_len - pattern_len:
-            txt_hash = hash(txt[i+1:i+pattern_len+1])
+            txt_hash = hash(txt[i+1:i + pattern_len + 1])
     return occurrences
 
 if __name__ == '__main__':
