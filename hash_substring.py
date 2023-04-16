@@ -13,15 +13,10 @@ def read_input():
         filename = '06'
         if "a" not in filename:
             file_name = "tests/" + filename
-            with open(file_name, 'r') as file:
-                pattern = file.readline().strip()
-                text = file.readline().strip()
+            with open(file_name, 'r') as f:
+                pattern = f.readline().strip()
+                text = f.readline().strip()
             return pattern, txt
-                
-    else:
-      print("Error")
-      return
-
 
 def print_occurrences(output):
     print(' '.join(map(str, output)))
@@ -34,10 +29,9 @@ def get_occurrences(pattern, txt):
     txt_hash = hash(txt[:pattern_len])
     
     occurrences = []
-    for i in range(txt_len - pattern_len +1):
-        if find_hesh == txt_hash and pattern == txt[i:i+pattern_len]:
+    for i in range(txt_len - pattern_len + 1):
+        if pattern_hash == txt_hash and pattern == txt[i:i+pattern_len]:
             occurrences.append(i)
-        # change main text-hesh to next
         if i < txt_len - pattern_len:
             txt_hash = hash(txt[i+1:i+pattern_len+1])
     return occurrences
