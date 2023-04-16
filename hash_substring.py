@@ -28,7 +28,7 @@ def print_occurrences(output):
     print(' '.join(map(str, output)))
 
 def get_occurrences(pattern, txt):
-    occurrences = []
+   
     find_len = len(pattern)
     txt_len = len(txt)
     find_hesh = hash(pattern)
